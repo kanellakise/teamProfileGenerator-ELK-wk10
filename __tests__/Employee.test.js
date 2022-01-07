@@ -30,4 +30,4 @@ test('gets Employee role', () => {
   const employee = new Employee('Phteven', '105', 'even@phteven.com');
 
   expect(employee.getRole()).toBe('Employee');
-})
+});

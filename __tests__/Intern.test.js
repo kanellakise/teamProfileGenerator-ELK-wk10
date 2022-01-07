@@ -9,7 +9,7 @@ test('creates an Intern object', () => {
   expect(intern.school).toBe('UT');
 });
 
-test('gets Intern github', () => {
+test('gets Intern school', () => {
   const intern = new Intern('Garby', '107', 'garby@flarby.com', 'UT');
 
   expect(intern.getSchool()).toBe('UT');

@@ -259,4 +259,12 @@ const addIntern = () => {
         })
 }
 
+const generateTeamProfile = () => {
+    const html = genHtml(teamArray);
+
+    console.log(html);
+    
+    writeFile(html);
+};
+
 promptUser();

@@ -88,19 +88,19 @@ genHtml = (data) => {
 
 
     if (role === 'Manager') {
-      const managerCard = genManager(data);
+      const managerCard = genManager(employee);
 
       pageArray.push(managerCard);
     }
 
     if (role === 'Engineer') {
-      const engineerCard = genEngineer(data);
+      const engineerCard = genEngineer(employee);
 
       pageArray.push(engineerCard);
     }
 
     if (role === 'Intern') {
-      const internCard = genIntern(data);
+      const internCard = genIntern(employee);
 
       pageArray.push(internCard);
     }

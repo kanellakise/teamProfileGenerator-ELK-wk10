@@ -17,7 +17,7 @@ const promptUser = () => {
         .prompt([
             {
                 type: 'list',
-                name: 'name',
+                name: 'menu',
                 message: 'What would you like to do?',
                 choices: ['Add a Manager', 'Add an Engineer', 'Add an Intern', 'Generate Team Profile', 'Quit']
             }
@@ -55,7 +55,7 @@ const addManager = () => {
                     if (nameInput) {
                         return true;
                     } else {
-                        console.log("PLease enter a name!");
+                        console.log("Please enter a name!");
                         return false;
                     }
                 }
@@ -101,18 +101,161 @@ const addManager = () => {
             }
         ])
         .then(managerData => {
-
             let {
                 name,
                 id,
                 email,
                 officeNumber
             } = managerData;
+
             let manager = new Manager(name, id, email, officeNumber);
-            console.log(manager);
 
             teamArray.push(manager);
             console.log(teamArray);
+            promptUser();
+        })
+        
+}
+
+const addEngineer = () => {
+    return inquirer
+        .prompt([
+            {
+                type: 'input',
+                name: 'name',
+                message: "Please enter the Engineer's name!",
+                validate: nameInput => {
+                    if (nameInput) {
+                        return true;
+                    } else {
+                        console.log("Please enter a name!");
+                        return false;
+                    }
+                }
+            },
+            {
+                type: 'input',
+                name: 'id',
+                message: "Please enter the Engineer's ID.",
+                validate: nameInput => {
+                    if (nameInput) {
+                        return true;
+                    } else {
+                        console.log("Please enter an ID!");
+                        return false;
+                    }
+                }
+            },
+            {
+                type: 'input',
+                name: 'email',
+                message: "Please enter the Engineer's email.",
+                validate: emailInput => {
+                    if (emailInput) {
+                        return true;
+                    } else {
+                        console.log("Please enter an email!");
+                        return false;
+                    }
+                }
+            },
+            {
+                type: 'input',
+                name: 'github',
+                message: "Please enter the Engineer's GitHub username.",
+                validate: emailInput => {
+                    if (emailInput) {
+                        return true;
+                    } else {
+                        console.log("Please enter a GitHub username!");
+                        return false;
+                    }
+                }
+            }
+        ])
+        .then(engineerData => {
+            let {
+                name,
+                id,
+                email,
+                github
+            } = engineerData;
+
+            let engineer = new Engineer(name, id, email, github);
+
+            teamArray.push(engineer);
+            promptUser();
+        })
+}
+
+const addIntern = () => {
+    return inquirer
+        .prompt([
+            {
+                type: 'input',
+                name: 'name',
+                message: "Please enter the Intern's name!",
+                validate: nameInput => {
+                    if (nameInput) {
+                        return true;
+                    } else {
+                        console.log("Please enter a name!");
+                        return false;
+                    }
+                }
+            },
+            {
+                type: 'input',
+                name: 'id',
+                message: "Please enter the Intern's ID.",
+                validate: nameInput => {
+                    if (nameInput) {
+                        return true;
+                    } else {
+                        console.log("Please enter an ID!");
+                        return false;
+                    }
+                }
+            },
+            {
+                type: 'input',
+                name: 'email',
+                message: "Please enter the Intern's email.",
+                validate: emailInput => {
+                    if (emailInput) {
+                        return true;
+                    } else {
+                        console.log("Please enter an email!");
+                        return false;
+                    }
+                }
+            },
+            {
+                type: 'input',
+                name: 'school',
+                message: "Please enter the Intern's school.",
+                validate: emailInput => {
+                    if (emailInput) {
+                        return true;
+                    } else {
+                        console.log("Please enter a school!");
+                        return false;
+                    }
+                }
+            }
+        ])
+        .then(internData => {
+            let {
+                name,
+                id,
+                email,
+                school
+            } = internData;
+
+            let intern = new Intern(name, id, email, school);
+
+            teamArray.push(intern);
+            promptUser();
         })
 }
 

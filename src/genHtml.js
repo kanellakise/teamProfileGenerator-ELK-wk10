@@ -11,7 +11,7 @@ const genManager = function (manager) {
         </div>
         <div class="media-content">
           <p class="title is-4">${manager.name}</p>
-          <p class="subtitle is-6">${manager.email}</p>
+          <a class="subtitle is-6" href="mailto:${manager.email}" target="_blank">${manager.email}</a>
           <p class="subtitle is-6">${manager.getRole()}</p>
         </div>
       </div>
@@ -38,14 +38,14 @@ const genEngineer = function (engineer) {
         </div>
         <div class="media-content">
           <p class="title is-4">${engineer.name}</p>
-          <p class="subtitle is-6">${engineer.email}</p>
+          <a class="subtitle is-6" href="mailto:${engineer.email}" target="_blank">${engineer.email}</a>
           <p class="subtitle is-6">${engineer.getRole()}</p>
         </div>
       </div>
 
       <div class="content">
         <span>ID: ${engineer.id}</span>
-        <span>GitHub: https://github.com/${engineer.github}</span>
+        <a href="https://github.com/${engineer.github}" target="_blank">GitHub: ${engineer.github}</a>
       </div>
     </div>
   </div>
@@ -65,7 +65,7 @@ const genIntern = function (intern) {
         </div>
         <div class="media-content">
           <p class="title is-4">${intern.name}</p>
-          <p class="subtitle is-6">${intern.email}</p>
+          <a class="subtitle is-6" href="mailto:${intern.email}" target="_blank">${intern.email}</a>
           <p class="subtitle is-6">${intern.getRole()}</p>
         </div>
       </div>

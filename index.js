@@ -1,7 +1,7 @@
 // Module import
 const inquirer = require('inquirer');
 const genHtml = require('./src/genHtml.js');
-const { writeFile } = require('./utils/generate-site.js');
+const writeFile = require('./utils/generate-site');
 
 // Employee model import
 const Manager = require('./lib/Manager');
@@ -50,7 +50,7 @@ const addManager = () => {
             {
                 type: 'input',
                 name: 'name',
-                message: "Please enter the Manager's name!",
+                message: "Please enter the Manager's name.",
                 validate: nameInput => {
                     if (nameInput) {
                         return true;
@@ -123,7 +123,7 @@ const addEngineer = () => {
             {
                 type: 'input',
                 name: 'name',
-                message: "Please enter the Engineer's name!",
+                message: "Please enter the Engineer's name.",
                 validate: nameInput => {
                     if (nameInput) {
                         return true;
@@ -194,7 +194,7 @@ const addIntern = () => {
             {
                 type: 'input',
                 name: 'name',
-                message: "Please enter the Intern's name!",
+                message: "Please enter the Intern's name.",
                 validate: nameInput => {
                     if (nameInput) {
                         return true;
@@ -259,11 +259,10 @@ const addIntern = () => {
         })
 }
 
+
 const generateTeamProfile = () => {
     const html = genHtml(teamArray);
 
-    console.log(html);
-    
     writeFile(html);
 };
 

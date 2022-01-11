@@ -1,5 +1,6 @@
 const fs = require('fs');
 
+// Writes new index.html or overwrites old one
 const writeFile = fileContent => {
     return new Promise((resolve, reject) => {
         fs.writeFile('./dist/index.html', fileContent, err => {

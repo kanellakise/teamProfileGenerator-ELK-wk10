@@ -79,6 +79,7 @@ const genIntern = function (intern) {
   `;
 };
 
+// Process team data and create html cards
 genHtml = (data) => {
   let pageArray = [];
 
@@ -114,6 +115,7 @@ genHtml = (data) => {
 
 };
 
+// Function inserts team cards into HTML body
 const generateTeamPage = function (employeeCards) {
   return `
   <!DOCTYPE html>

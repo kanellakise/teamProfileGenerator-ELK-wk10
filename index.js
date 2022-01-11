@@ -11,6 +11,7 @@ const Intern = require('./lib/Intern');
 // Array holds team
 const teamArray = [];
 
+// Runs menu for team profile building choices
 const promptUser = () => {
     console.log('Welcome to Team Profile Generator!')
     return inquirer
@@ -44,6 +45,7 @@ const promptUser = () => {
         });
 };
 
+// Inquirer prompts if Manager is selected
 const addManager = () => {
     return inquirer
         .prompt([
@@ -117,6 +119,7 @@ const addManager = () => {
         
 }
 
+// Inquirer prompts if Engineer is selected
 const addEngineer = () => {
     return inquirer
         .prompt([
@@ -188,6 +191,7 @@ const addEngineer = () => {
         })
 }
 
+// Inquirer prompts if Intern is selected
 const addIntern = () => {
     return inquirer
         .prompt([
@@ -259,11 +263,12 @@ const addIntern = () => {
         })
 }
 
-
+// Generate index.html based on teamArray determined by inquirer prompts
 const generateTeamProfile = () => {
     const html = genHtml(teamArray);
 
     writeFile(html);
 };
 
+// Call app start
 promptUser();
